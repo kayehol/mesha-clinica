@@ -6,7 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
-a {
+ a {
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+  color: #000;
+}
+
+#atendimentos  {
   text-decoration: none;
   color: #fff;
 }

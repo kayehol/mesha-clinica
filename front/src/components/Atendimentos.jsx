@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+
 import List from '@mui/material/List';
 import Grid from '@mui/material/Grid';
 import ListItem from '@mui/material/ListItem';
@@ -23,10 +25,10 @@ const Atendimentos = () => {
         <Grid container alignItems="center" justifyContent="center">
             <Grid item> 
                 <List>
-                    {atendimentos && atendimentos.map((atend) => (
+                    {atendimentos && atendimentos.map((atend, idx) => (
                         <>
-                            <ListItem divider>
-                                <ListItemButton component="a" href="#">
+                            <ListItem key={idx} divider>
+                                <ListItemButton component={Link} to={`/atendimentos/${atend.id}`}>
                                     <ListItemIcon>
                                         <InfoIcon color="info" />
                                     </ListItemIcon>

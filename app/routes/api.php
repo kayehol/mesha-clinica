@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AtendimentoController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProcedimentoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,7 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/atendimentos', [AtendimentoController::class, 'index']);
+Route::get('/clientes', [ClienteController::class, 'index']);
+Route::get('/procedimentos', [ProcedimentoController::class, 'index']);
+
 Route::get('/atendimentos/{id}', [AtendimentoController::class, 'show']);
+
 Route::post('/atendimentos', [AtendimentoController::class, 'store']);
 Route::delete('/atendimentos/{id}', [AtendimentoController::class, 'delete']);
 
